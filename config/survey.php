@@ -6,7 +6,7 @@ return [
     User model class to use
     */
 
-    'UserModel' => 'Illuminate\Foundation\Auth\User',
+    'userModel' => 'Illuminate\Foundation\Auth\User',
 
     /*
      * Database related configurations.
