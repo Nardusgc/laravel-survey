@@ -3,7 +3,6 @@
 namespace MattDaneshvar\Survey\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
 use MattDaneshvar\Survey\Contracts\Answer;
 use MattDaneshvar\Survey\Contracts\Entry as EntryContract;
 use MattDaneshvar\Survey\Contracts\Survey;
@@ -76,7 +75,7 @@ class Entry extends Model implements EntryContract
      */
     public function participant()
     {
-        return $this->belongsTo(User::class, 'participant_id');
+        return $this->belongsTo(config('survey.userModel')::class, 'participant_id');
     }
 
     /**
