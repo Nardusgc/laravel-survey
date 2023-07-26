@@ -15,11 +15,12 @@ class Question extends Model implements QuestionContract
      *
      * @var array
      */
-    protected $fillable = ['type', 'options', 'content', 'rules', 'survey_id'];
+    protected $fillable = ['type', 'options', 'content', 'rules', 'display', 'survey_id'];
 
     protected $casts = [
         'rules' => 'array',
         'options' => 'array',
+        'display' => 'array',
     ];
 
     /**
@@ -44,11 +45,11 @@ class Question extends Model implements QuestionContract
     /**
      * Question constructor.
      *
-     * @param  array  $attributes
+     * @param array $attributes
      */
     public function __construct(array $attributes = [])
     {
-        if (! isset($this->table)) {
+        if (!isset($this->table)) {
             $this->setTable(config('survey.database.tables.questions'));
         }
 
