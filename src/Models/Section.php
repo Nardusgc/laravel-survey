@@ -36,6 +36,6 @@ class Section extends Model implements SectionContract
      */
     public function questions()
     {
-        return $this->hasMany(get_class(app()->make(Question::class)));
+        return $this->hasMany(get_class(app()->make(Question::class)))->orderBy('order_id');
     }
 }
